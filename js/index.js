@@ -1,6 +1,6 @@
 
 // address of your smart contract deployed on the blockchain
-var smartContractAddress = "0x10863c41461f43b33b2f17cbc9e24b94cdef603b";
+var smartContractAddress = "0x42e2e63facbd31ebf378bf1c2f7aadb780ae88b4";
 
 // ABI is a JSON formatted list of contract's function and arguments required to create the EVM bytecode required to call the function
 var abi = [
