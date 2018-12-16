@@ -182,7 +182,7 @@ function getTheHash(){
     }, function(err, result) {
         if (!err){
 			console.log('HASH GOT SUCCESSFULLY',result);
-            //document.getElementById("returnHash").innerText=result;
+            document.getElementById("returnHash").innerText=result;
         }
         else{
             console.log(err);

@@ -92,13 +92,7 @@
                     </div>
 
                     <button onclick="createFarmerToken()">Submit</button>
-                    <button onclick="getTheHash()">Get the hash</button>
-                    <div class="input-group input-group-icon">
-                      <input type="text" placeholder="hash" id="hash" />
-                      <div class="input-icon"><i class="fas fa-money-check-alt"></i></div>
-                    </div>
-
-                    <button onclick="backTrack()">Back Track</button>
+                    <button onclick="getTheHash()">Generate hash</button>
 
                     <br>
 
@@ -133,7 +127,7 @@
                       <div class="input-icon"><i class="fa fa-user"></i></div>
                     </div>
                     <button onclick=createToken()>Submit</button>
-
+                    <button onclick="getTheHash()">Generate hash</button>
                     <br>
 
                     <p id="returnhash"></p>
@@ -159,6 +153,33 @@
                     </div>
 
                     <button onclick="createToken()">Submit</button>
+                    <button onclick="getTheHash()">Generate hash</button>
+                    <br>
+
+                    <p id="returnhash"></p>
+                  </div>
+                </form>
+              </div>
+            </section>
+
+            <!-- Section 3 Consumer -->
+            <section class="tm-section tm-section-3 mx-auto">
+              <div class="container">
+                <form onsubmit="return false">
+                  <div class="row">
+                    <h4>Scan for more details</h4>
+
+                    <div class="input-group input-group-icon">
+                      <img src="img/qr_code.png" alt="qr_code">
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                      <input type="text" placeholder="hash" id="hash" />
+                      <div class="input-icon"><i class="fas fa-money-check-alt"></i></div>
+                    </div>
+
+                    <button onclick="backTrack()">Back Track</button>
+
 
                     <br>
 
@@ -166,29 +187,7 @@
                   </div>
                 </form>
               </div>
-              </section>
-
-              <!-- Section 3 Consumer -->
-              <section class="tm-section tm-section-3 mx-auto">
-                <div class="container">
-                  <form onsubmit="return false">
-                    <div class="row">
-                      <h4>Scan for more details</h4>
-
-                      <div class="input-group input-group-icon">
-                        <img src="img/qr_code.png" alt="qr_code">
-                      </div>
-
-
-                      <button onclick="createToken()">Submit</button>
-
-                      <br>
-
-                      <p id="returnhash"></p>
-                    </div>
-                  </form>
-                </div>
-              </section>
+            </section>
           </div>
         </div>
       </div>
