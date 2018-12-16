@@ -69,33 +69,33 @@
           <div class="tm-content">
 
             <!-- Section 0 Farm -->
-            <section class="tm-section tm-section-0">
-                <div class="container">
-              <form onsubmit="return false">
-                <div class="row">
-                  <h4>Farmer Form</h4>
-                  <div class="input-group input-group-icon">
-                    <input type="text" placeholder="Receiver" id="receiver"/>
-                    <div class="input-icon"><i class="fas fa-industry"></i></div>
+            <section class="tm-section tm-section-0 mx-auto">
+              <div class="container">
+                <form onsubmit="return false">
+                  <div class="row">
+                    <h4>Farmer Form</h4>
+                    <div class="input-group input-group-icon">
+                      <input type="text" placeholder="Receiver" id="receiver"/>
+                      <div class="input-icon"><i class="fas fa-industry"></i></div>
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                      <input type="text" placeholder="Amount" id="amount"/>
+                      <div class="input-icon"><i class="fas fa-money-check-alt"></i></div>
+                    </div>
+
+                    <div class="input-group input-group-icon">
+                      <input type="date" placeholder="Date Produce" id="date"/>
+                      <div class="input-icon"><i class="fa fa-user"></i></div>
+                    </div>
+                    
+                    <button onclick=createToken() method = "post">Submit</button>
+
+                    <br>
+
+                    <p id="returnhash"></p>
                   </div>
-
-                  <div class="input-group input-group-icon">
-                    <input type="text" placeholder="Amount" id="amount"/>
-                    <div class="input-icon"><i class="fas fa-money-check-alt"></i></div>
-                  </div>
-
-                  <div class="input-group input-group-icon">
-                    <input type="date" placeholder="Date Produce" id="date"/>
-                    <div class="input-icon"><i class="fa fa-user"></i></div>
-                  </div>
-                  
-                  <button onclick=createToken() method = "post">Submit</button>
-
-                  <br>
-
-                  <p id="returnhash"></p>
-                </div>
-              </form>
+                </form>
               </div>
             </section>
 
