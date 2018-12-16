@@ -176,6 +176,31 @@ async function createFarmerToken(){
         }
     });
 }
+
+async function giveToken(){
+    receiver= document.getElementById("receiver").value;
+    amount= document.getElementById("amount").value;
+	data= '{'+'\"Date\":'+'\"'+document.getElementById("date").value+'\"'+'}';
+	
+	console.log(receiver);
+	console.log(amount);
+	console.log(data);
+    await contractInstance.giveToken(receiver,amount,data,{
+        from:myAccount,
+       // gasPrice: "20000000000", // amount of wei you're paying for every unit of gas
+        gas: "3000000", //maximum gas to be spent on this transaction
+
+    }, function(err, result) {
+        if (!err){
+			console.log('TOKEN SENT SUCCESSFULLY',result);
+            //document.getElementById("returnHash").innerText=result;
+        }
+        else{
+            console.log(err);
+        }
+    });
+}
+
 function getTheHash(){
 	contractInstance.hashReturn({
         from:myAccount
