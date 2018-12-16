@@ -17,8 +17,15 @@ button {
   cursor: pointer;
 }
 
+
 button:hover {
   background-color: #5df03f;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
 }
 
 body {
