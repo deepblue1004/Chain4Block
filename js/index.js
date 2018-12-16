@@ -133,7 +133,7 @@ function initApp(){
 async function backTrack() {
   msgString = document.getElementById("hash").value;
   if(!msgString){
-    return window.alert("MESSAGE VALUE IS EMPTY");
+    return window.alert("HASH VALUE IS EMPTY");
   }
 
   await contractInstance.getDetails(msgString,{ 
@@ -146,7 +146,7 @@ async function backTrack() {
    }, function(err, result) {
         if (!err){
         console.log('BACKTRACKED SUCCESSFULLY',result); 
-        //document.getElementById("result").innerText=result;
+        alert(result[4]);
         }
         else{
         console.log(err);
@@ -169,7 +169,7 @@ async function createFarmerToken(){
     }, function(err, result) {
         if (!err){
 			console.log('TOKEN CREATED SUCCESSFULLY',result);
-            //document.getElementById("returnHash").innerText=result;
+            
         }
         else{
             console.log(err);
@@ -182,7 +182,8 @@ function getTheHash(){
     }, function(err, result) {
         if (!err){
 			console.log('HASH GOT SUCCESSFULLY',result);
-            document.getElementById("returnHash").innerText=result;
+			alert(result);
+			
         }
         else{
             console.log(err);
