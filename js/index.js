@@ -1,44 +1,9 @@
 
 // address of your smart contract deployed on the blockchain
-var smartContractAddress = "0x8bcb6de5c25a58d7d44e444c0bc7c0c91d990b0f";
+var smartContractAddress = "0x9c8d599674ca12bf040eeaa53e8148f17859f7ef";
 
 // ABI is a JSON formatted list of contract's function and arguments required to create the EVM bytecode required to call the function
 var abi = [
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "hashNo",
-				"type": "address"
-			}
-		],
-		"name": "getDetails",
-		"outputs": [
-			{
-				"name": "from1",
-				"type": "address"
-			},
-			{
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"name": "qty",
-				"type": "uint256"
-			},
-			{
-				"name": "prevhash",
-				"type": "address"
-			},
-			{
-				"name": "data",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
 	{
 		"constant": false,
 		"inputs": [
@@ -103,6 +68,46 @@ var abi = [
 		"payable": true,
 		"stateMutability": "payable",
 		"type": "constructor"
+	},
+	{
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "fallback"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "hashNo",
+				"type": "address"
+			}
+		],
+		"name": "getDetails",
+		"outputs": [
+			{
+				"name": "from1",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "qty",
+				"type": "uint256"
+			},
+			{
+				"name": "prevhash",
+				"type": "address"
+			},
+			{
+				"name": "data",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
 ];
 
@@ -113,7 +118,7 @@ function initApp(){
   myAccount = web3.eth.accounts[0];
   myContract = web3.eth.contract(abi);
   contractInstance = myContract.at(smartContractAddress);
-  console.log(contractInstance);
+  
 }
 
 function backTrack(msgString) {
@@ -142,7 +147,11 @@ function backTrack(msgString) {
 function createFarmerToken(){
     receiver= document.getElementById("receiver").value;
     amount= document.getElementById("amount").value;
-    data= '{'+'\"Date\":'+document.getElementById("date").value+"}";
+	data= '{'+'\"Date\":'+'\"'+document.getElementById("date").value+'\"'+'}';
+	
+	console.log(receiver);
+	console.log(amount);
+	console.log(data);
     contractInstance.createToken(receiver,amount,data,{
         from:myAccount,
         gasPrice: "20000000000", // amount of wei you're paying for every unit of gas
@@ -150,8 +159,9 @@ function createFarmerToken(){
 
     }, function(err, result) {
         if (!err){
-            console.log('BACKTRACKED SUCCESSFULLY',result); 
-            document.getElementById("returnHash").innerText=result;
+			console.log('TOKEN CREATED SUCCESSFULLY',result);
+			//let fillText = "abc";
+            //document.getElementById("returnHash").innerText=String(fillText);
         }
         else{
             console.log(err);
