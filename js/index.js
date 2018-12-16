@@ -154,8 +154,8 @@ function createFarmerToken(){
 	console.log(data);
     contractInstance.createToken(receiver,amount,data,{
         from:myAccount,
-        gasPrice: "20000000000", // amount of wei you're paying for every unit of gas
-        gas: "41000", //maximum gas to be spent on this transaction
+       // gasPrice: "20000000000", // amount of wei you're paying for every unit of gas
+        gas: "3000000", //maximum gas to be spent on this transaction
 
     }, function(err, result) {
         if (!err){
