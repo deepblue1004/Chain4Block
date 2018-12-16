@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>The Card HTML5 Template by tooplate.com</title>
+  <title>Chain4Block - Supply Chain Tokenization</title>
 
   <!-- load CSS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
@@ -52,8 +52,8 @@
 
       <!-- Site header -->
       <header class="tm-site-header-box tm-bg-dark">
-        <h1 class="tm-site-title">The Card</h1>
-        <p class="mb-0 tm-site-subtitle">Free HTML Template for you</p>
+        <h1 class="tm-site-title">Chain4Block</h1>
+        <p class="mb-0 tm-site-subtitle">Supply Chain Tokenization</p>
       </header>
     </div>
     <!-- tm-top-container -->
@@ -234,16 +234,9 @@
 
 
     <div class="tm-bottom-container">
-      <!-- Barcode -->
-      <div class="tm-barcode-box">
-        <img src="img/bar-code.jpg" alt="Bar code">
-      </div>
-
       <!-- Footer -->
       <footer>
-        || Copyright &copy; 2018 Company Name 
-        
-        || design: <a rel="nofollow" href="http://tooplate.com" class="tm-footer-link">tooplate</a> ||
+        || Copyright &copy; 2018 Chain4Block||
       </footer>
     </div>
   </div>
@@ -317,26 +310,27 @@
       eachNavLink = $('.tm-nav-link');
       links = $('.tm-nav-links');
 
+      links.fadeIn(0);
       // "Menu" open/close
-      if (links.hasClass('open')) {
-        links.fadeIn(0);
-      } else {
-        links.fadeOut(0);
-      }
+      // if (links.hasClass('open')) {
+      //   links.fadeIn(0);
+      // } else {
+      //   links.fadeOut(0);
+      // }
 
       // Each menu item click
       eachNavLink.on('click', navLinkClick);
 
-      $('.tm-navbar-menu').click(function (e) {
+      // $('.tm-navbar-menu').click(function (e) {
 
-        if (links.hasClass('open')) {
-          links.fadeOut();
-        } else {
-          links.fadeIn();
-        }
+      //   if (links.hasClass('open')) {
+      //     links.fadeOut();
+      //   } else {
+      //     links.fadeIn();
+      //   }
 
-        links.toggleClass('open');
-      });
+      //   links.toggleClass('open');
+      // });
 
       // window resize
       $(window).resize(function () {
