@@ -10,7 +10,7 @@
   <!-- load CSS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
   <!-- Google web font "Open Sans" -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -70,14 +70,35 @@
 
             <!-- Section 0 Farm -->
             <section class="tm-section tm-section-0">
-              <h2 class="tm-section-title mb-3 font-weight-bold">Introduction</h2>
-              <div class="tm-textbox tm-bg-dark">
-                <p>Etiam eu nisl sit amet odio convallis feugiat. Nulla vitae dui quam. Maecenas rhoncus tortor varius urna
-                  rhoncus, ultricies consequat nulla posuere.</p>
-                <p class="mb-0">Please tell your friends about tooplate website for free HTML templates. This is 70% alpha background.</p>
+                <div class="container">
+              <form onsubmit="return false">
+                <div class="row">
+                  <h4>Farmer Form</h4>
+                  <div class="input-group input-group-icon">
+                    <input type="text" placeholder="Receiver" id="receiver"/>
+                    <div class="input-icon"><i class="fas fa-industry"></i></div>
+                  </div>
+
+                  <div class="input-group input-group-icon">
+                    <input type="text" placeholder="Amount" id="amount"/>
+                    <div class="input-icon"><i class="fas fa-money-check-alt"></i></div>
+                  </div>
+
+                  <div class="input-group input-group-icon">
+                    <input type="date" placeholder="Date Produce" id="date"/>
+                    <div class="input-icon"><i class="fa fa-user"></i></div>
+                  </div>
+                  
+                  <button onclick=createToken() method = "post">Submit</button>
+
+                  <br>
+
+                  <p id="returnhash"></p>
+                </div>
+              </form>
               </div>
-              <a href="#" class="tm-link">Read More</a>
             </section>
+
 
             <!-- Section 1 Manufacturer -->
             <section class="tm-section tm-section-1">
@@ -93,59 +114,15 @@
               <div class="container">
                 <form onsubmit="return false">
                   <div class="row">
-                    <h4>Account</h4>
-                    <div class="input-group input-group-icon">
-                      <input type="text" placeholder="Full Name"/>
-                      <div class="input-icon"><i class="fa fa-user"></i></div>
-                    </div>
-                    <div class="input-group input-group-icon">
-                      <input type="email" placeholder="Email Adress"/>
-                      <div class="input-icon"><i class="fa fa-envelope"></i></div>
-                    </div>
-                    <div class="input-group input-group-icon">
-                      <input type="password" placeholder="Password"/>
-                      <div class="input-icon"><i class="fa fa-key"></i></div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-half">
-                      <h4>Date of Birth</h4>
-                      <div class="input-group">
-                        <div class="col-third">
-                          <input type="text" placeholder="DD"/>
-                        </div>
-                        <div class="col-third">
-                          <input type="text" placeholder="MM"/>
-                        </div>
-                        <div class="col-third">
-                          <input type="text" placeholder="YYYY"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-half">
-                      <h4>Gender</h4>
-                      <div class="input-group">
-                        <input type="radio" name="gender" value="male" id="gender-male"/>
-                        <label for="gender-male">Male</label>
-                        <input type="radio" name="gender" value="female" id="gender-female"/>
-                        <label for="gender-female">Female</label>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  
-                  <br><hr><br>
-
-                  <div class="row">
-                    <h4>Testing Area</h4>
+                    <h4>Farmer Form</h4>
                     <div class="input-group input-group-icon">
                       <input type="text" placeholder="Receiver" id="receiver"/>
-                      <div class="input-icon"><i class="fa fa-user"></i></div>
+                      <div class="input-icon"><i class="fas fa-industry"></i></div>
                     </div>
 
                     <div class="input-group input-group-icon">
                       <input type="text" placeholder="Amount" id="amount"/>
-                      <div class="input-icon"><i class="fa fa-user"></i></div>
+                      <div class="input-icon"><i class="fas fa-money-check-alt"></i></div>
                     </div>
 
                     <div class="input-group input-group-icon">
