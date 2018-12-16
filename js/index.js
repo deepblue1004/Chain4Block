@@ -131,7 +131,7 @@ function backTrack(msgString) {
 function createToken(){
     receiver= document.getElementById("receiver").value;
     amount= document.getElementById("amount").value;
-    data= '{'+'\"middlemanInfo\":'+document.getElementById("data").value+"}";
+    data= '{'+'\"Date\":'+document.getElementById("date").value+"}";
     contractInstance.createToken(receiver,amount,data,{
         from:myAccount,
         gasPrice: "20000000000", // amount of wei you're paying for every unit of gas
