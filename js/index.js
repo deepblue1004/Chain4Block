@@ -146,7 +146,7 @@ async function backTrack() {
    }, function(err, result) {
         if (!err){
         console.log('BACKTRACKED SUCCESSFULLY',result); 
-        alert(result[4]);
+		alert("from:"+result[0]+"\n"+"to:"+result[1] +"data:"+"\n"+result[4])
         }
         else{
         console.log(err);
