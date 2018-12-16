@@ -1,6 +1,6 @@
 
 // address of your smart contract deployed on the blockchain
-var smartContractAddress = "0x9c8d599674ca12bf040eeaa53e8148f17859f7ef";
+var smartContractAddress = "0x10863c41461f43b33b2f17cbc9e24b94cdef603b";
 
 // ABI is a JSON formatted list of contract's function and arguments required to create the EVM bytecode required to call the function
 var abi = [
@@ -21,12 +21,7 @@ var abi = [
 			}
 		],
 		"name": "createToken",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
+		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -50,7 +45,7 @@ var abi = [
 		"name": "giveToken",
 		"outputs": [
 			{
-				"name": "_hashNo",
+				"name": "",
 				"type": "address"
 			}
 		],
@@ -108,6 +103,20 @@ var abi = [
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "hashReturn",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
 ];
 
@@ -121,13 +130,13 @@ function initApp(){
   
 }
 
-function backTrack(msgString) {
-  /*msgString = document.getElementById("productHash").value;
+async function backTrack() {
+  msgString = document.getElementById("hash").value;
   if(!msgString){
     return window.alert("MESSAGE VALUE IS EMPTY");
-  }*/
+  }
 
-  contractInstance.getDetails(msgString,{ 
+  await contractInstance.getDetails(msgString,{ 
     from: myAccount
     //gasPrice: "20000000000", // amount of wei you're paying for every unit of gas
     //gas: "41000", //maximum gas to be spent on this transaction
@@ -137,14 +146,14 @@ function backTrack(msgString) {
    }, function(err, result) {
         if (!err){
         console.log('BACKTRACKED SUCCESSFULLY',result); 
-        document.getElementById("result").innerText=result;
+        //document.getElementById("result").innerText=result;
         }
         else{
         console.log(err);
         }
   });
 }
-function createFarmerToken(){
+async function createFarmerToken(){
     receiver= document.getElementById("receiver").value;
     amount= document.getElementById("amount").value;
 	data= '{'+'\"Date\":'+'\"'+document.getElementById("date").value+'\"'+'}';
@@ -152,7 +161,7 @@ function createFarmerToken(){
 	console.log(receiver);
 	console.log(amount);
 	console.log(data);
-    contractInstance.createToken(receiver,amount,data,{
+    await contractInstance.createToken(receiver,amount,data,{
         from:myAccount,
        // gasPrice: "20000000000", // amount of wei you're paying for every unit of gas
         gas: "3000000", //maximum gas to be spent on this transaction
@@ -160,14 +169,27 @@ function createFarmerToken(){
     }, function(err, result) {
         if (!err){
 			console.log('TOKEN CREATED SUCCESSFULLY',result);
-			//let fillText = "abc";
-            //document.getElementById("returnHash").innerText=String(fillText);
+            //document.getElementById("returnHash").innerText=result;
         }
         else{
             console.log(err);
         }
     });
 }
+function getTheHash(){
+	contractInstance.hashReturn({
+        from:myAccount
+    }, function(err, result) {
+        if (!err){
+			console.log('HASH GOT SUCCESSFULLY',result);
+            //document.getElementById("returnHash").innerText=result;
+        }
+        else{
+            console.log(err);
+        }
+    });
+}
+
 window.addEventListener('load', function() {
 // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
