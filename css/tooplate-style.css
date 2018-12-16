@@ -3,6 +3,24 @@
   padding: 0;
 }
 
+button {
+  background-color: rgb(31, 186, 0);
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 4px auto;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5df03f;
+}
+
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 19px;
@@ -121,15 +139,6 @@ a {
 
 .tm-textbox-2 {
   padding: 60px 40px 100px;
-}
-
-.tm-section-0 {
-  margin-top: 70px;
-  max-width: 575px;
-}
-.tm-section-1 {
-  margin-top: 70px;
-  max-width: 420px;
 }
 
 .tm-link:link,
