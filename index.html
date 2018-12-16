@@ -169,22 +169,25 @@
                   <div class="row">
                     <h4>Testing Area</h4>
                     <div class="input-group input-group-icon">
-                      <input type="text" placeholder="Manufacturer" id="Farmer01"/>
+                      <input type="text" placeholder="Receiver" id="receiver"/>
                       <div class="input-icon"><i class="fa fa-user"></i></div>
                     </div>
 
                     <div class="input-group input-group-icon">
-                      <input type="text" placeholder="Litre Produce" id="Farmer02"/>
+                      <input type="text" placeholder="Amount" id="amount"/>
                       <div class="input-icon"><i class="fa fa-user"></i></div>
                     </div>
 
                     <div class="input-group input-group-icon">
-                      <input type="date" placeholder="Date Produce" id="Farmer03"/>
+                      <input type="date" placeholder="Date Produce" id="date"/>
                       <div class="input-icon"><i class="fa fa-user"></i></div>
                     </div>
                     
-                    <button>Submit</button>
+                    <button onclick=createToken()>Submit</button>
 
+                    <br>
+
+                    <p id="returnhash"></p>
                   </div>
                 </form>
               </div>
@@ -402,6 +405,8 @@
         }
       });
     }
+
   </script>
+  <script src="js/index.js"></script>
 </body>
 </html>

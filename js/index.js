@@ -1,9 +1,100 @@
 
 // address of your smart contract deployed on the blockchain
-var smartContractAddress = "";
+var smartContractAddress = "0x8bcb6de5c25a58d7d44e444c0bc7c0c91d990b0f";
 
 // ABI is a JSON formatted list of contract's function and arguments required to create the EVM bytecode required to call the function
-var abi = [];
+var abi = [
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "from1",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "qty",
+				"type": "uint256"
+			},
+			{
+				"name": "data",
+				"type": "string"
+			}
+		],
+		"name": "setDetails",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "start",
+				"type": "address"
+			},
+			{
+				"name": "hashNo",
+				"type": "address"
+			}
+		],
+		"name": "setGenesisHash",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "constructor"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "hashNo",
+				"type": "address"
+			}
+		],
+		"name": "getDetails",
+		"outputs": [
+			{
+				"name": "from1",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "qty",
+				"type": "uint256"
+			},
+			{
+				"name": "prevhash",
+				"type": "address"
+			},
+			{
+				"name": "data",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
 
 var myAccount;
 var web3;
@@ -40,7 +131,7 @@ function backTrack(msgString) {
 function createToken(){
     receiver= document.getElementById("receiver").value;
     amount= document.getElementById("amount").value;
-    data= '{'+'\"middlemanInfo\":'+document.getElementById("middlemanInfo").value+"}";
+    data= '{'+'\"middlemanInfo\":'+document.getElementById("data").value+"}";
     contractInstance.createToken(receiver,amount,data,{
         from:myAccount,
         gasPrice: "20000000000", // amount of wei you're paying for every unit of gas
